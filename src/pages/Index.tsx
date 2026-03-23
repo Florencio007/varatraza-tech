@@ -5,7 +5,8 @@ import WhyUs from "@/components/WhyUs";
 import Stats from "@/components/Stats";
 import Pricing from "@/components/Pricing";
 import Process from "@/components/Process";
-import Testimonials from "@/components/Testimonials";
+import Team from "@/components/Team";
+import Projects from "@/components/Projects";
 import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
 
@@ -18,7 +19,8 @@ const Index = () => (
     <Stats />
     <Pricing />
     <Process />
-    <Testimonials />
+    <Team />
+    <Projects />
     <CtaSection />
     <Footer />
   </>
