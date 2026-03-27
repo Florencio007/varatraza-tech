@@ -4,7 +4,7 @@ import { Check, Zap, RefreshCw } from "lucide-react";
 const plans = [
   {
     name: "ESSENTIEL",
-    subName: "Pack Visibilité",
+    subName: "Pack visibilité",
     price: "500k – 900k Ar",
     delivery: "7–10 jours",
     featured: false,
@@ -20,13 +20,13 @@ const plans = [
   },
   {
     name: "PRO",
-    subName: "Pack Digital Complet",
+    subName: "Pack digital complet",
     price: "1,5M – 2,5M Ar",
     delivery: "14–21 jours",
     featured: true,
     badge: "Recommandé / Meilleur ROI",
     features: [
-      "Tout le Pack Visibilité inclus",
+      "Tout le pack visibilité inclus",
       "Réservation en ligne intégrée",
       "SEO technique + blog automatisé",
       "Chatbot IA 24h/24 (Multilingue)",
@@ -42,7 +42,7 @@ const plans = [
     delivery: "4–6 semaines",
     featured: false,
     features: [
-      "Tout le Pack Pro inclus",
+      "Tout le pack pro inclus",
       "CRM custom IA (scoring leads)",
       "Simulateur de prix dynamiques",
       "Sync OTA Booking/Airbnb (iCal/API)",
