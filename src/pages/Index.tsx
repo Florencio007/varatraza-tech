@@ -6,9 +6,9 @@ import Stats from "@/components/Stats";
 import Pricing from "@/components/Pricing";
 import Process from "@/components/Process";
 import Team from "@/components/Team";
-import Projects from "@/components/Projects";
 import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
+import ChatBot from "@/components/ChatBot";
 
 const Index = () => (
   <>
@@ -20,9 +20,9 @@ const Index = () => (
     <Pricing />
     <Process />
     <Team />
-    <Projects />
     <CtaSection />
     <Footer />
+    <ChatBot />
   </>
 );
 

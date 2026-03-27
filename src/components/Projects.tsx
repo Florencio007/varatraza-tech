@@ -4,11 +4,11 @@ import { Globe, Bot, BarChart3, ExternalLink } from "lucide-react";
 const projects = [
   {
     icon: Globe,
-    title: "Hôtel Colbert — Site Bilingue",
+    title: "Hôtel Colbert — Site Multilingue",
     category: "Site Web · Tourisme",
     description:
-      "Site vitrine bilingue FR/EN avec système de réservation intégré, galerie photo immersive et optimisation SEO. Livré en 10 jours.",
-    tags: ["React", "SEO", "Bilingue", "Réservation"],
+      "Site vitrine multilingue avec système de réservation intégré, galerie photo immersive et optimisation SEO. Livré en 10 jours.",
+    tags: ["React", "SEO", "Multilingue", "Réservation"],
     gradient: "from-primary to-primary/70",
   },
   {

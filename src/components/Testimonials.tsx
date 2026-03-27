@@ -13,7 +13,7 @@ const testimonials = [
     initials: "MT",
     name: "Fondateur",
     company: "Madagascar Travel Agency",
-    quote: "En 10 jours nous avions un site bilingue professionnel. Le ROI a été immédiat sur les réservations directes.",
+    quote: "En 10 jours nous avions un site multilingue professionnel. Le ROI a été immédiat sur les réservations directes.",
     stars: 5,
   },
   {

@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Varatraza Tech — Logo Kit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --blue: #0B5FFF;
+      --blue-d: #0047CC;
+      --teal: #00D4AA;
+      --teal-d: #00A688;
+      --navy: #0A1628;
+      --slate: #1A2340;
+      --gray: #64748B;
+      --border: #E0E4ED;
+      --off: #F4F6FA;
+      --white: #FFFFFF;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #F0F2F8;
+      font-family: 'DM Sans', sans-serif;
+      color: var(--slate);
+      min-height: 100vh;
+    }
+
+    /* ── TOPBAR ── */
+    .topbar {
+      background: var(--navy);
+      padding: 0 48px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255, 255, 255, .06);
+    }
+
+    .topbar-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .topbar-logo svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .topbar-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -.3px;
+    }
+
+    .topbar-name span {
+      color: var(--teal);
+    }
+
+    .topbar-tag {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: .14em;
+      color: rgba(255, 255, 255, .3);
+      background: rgba(255, 255, 255, .06);
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--navy);
+      padding: 72px 48px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      width: 800px;
+      height: 800px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(11, 95, 255, .14) 0%, transparent 65%);
+      top: -300px;
+      right: -200px;
+      pointer-events: none;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 212, 170, .08) 0%, transparent 65%);
+      bottom: -200px;
+      left: 100px;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: .2em;
+      color: rgba(255, 255, 255, .3);
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: rgba(255, 255, 255, .2);
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -.03em;
+      line-height: 1.08;
+      margin-bottom: 14px;
+    }
+
+    .hero h1 em {
+      color: var(--teal);
+      font-style: normal;
+    }
+
+    .hero p {
+      font-size: 15px;
+      color: rgba(255, 255, 255, .4);
+      line-height: 1.7;
+      max-width: 520px;
+    }
+
+    .hero-badges {
+      display: flex;
+      gap: 8px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+
+    .hbadge {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      letter-spacing: .1em;
+      padding: 5px 12px;
+      border-radius: 20px;
+      border: .5px solid rgba(255, 255, 255, .12);
+      color: rgba(255, 255, 255, .4);
+    }
+
+    .hbadge.active {
+      background: var(--teal);
+      color: var(--navy);
+      border-color: transparent;
+      font-weight: 700;
+    }
+
+    /* ── PAGE ── */
+    .page {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+
+    /* ── SECTION LABEL ── */
+    .sec-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 9px;
+      letter-spacing: .22em;
+      color: var(--gray);
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      margin-top: 52px;
+    }
+
+    .sec-label::after {
+      content: '';
+      flex: 1;
+      height: .5px;
+      background: var(--border);
+    }
+
+    /* ── ANIMATED BLOCK ── */
+    .anim-block {
+      background: var(--navy);
+      border-radius: 20px;
+      padding: 60px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 0;
+    }
+
+    .anim-block::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 50% at 50% 50%, rgba(11, 95, 255, .1), transparent 70%);
+      pointer-events: none;
+    }
+
+    .anim-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 36px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .replay-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 20px;
+      border-radius: 50px;
+      background: rgba(255, 255, 255, .07);
+      color: rgba(255, 255, 255, .5);
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      border: .5px solid rgba(255, 255, 255, .12);
+      font-family: 'DM Sans', sans-serif;
+      transition: all .2s;
+      position: relative;
+      z-index: 1;
+    }
+
+    .replay-btn:hover {
+      background: rgba(255, 255, 255, .13);
+      color: #fff;
+    }
+
+    /* ── LOGO GRID ── */
+    .logo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    @media(max-width:700px) {
+      .logo-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media(max-width:480px) {
+      .logo-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ── LOGO CARD ── */
+    .lcard {
+      border-radius: 16px;
+      overflow: hidden;
+      border: .5px solid var(--border);
+      background: var(--white);
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .lcard:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(11, 95, 255, .1);
+    }
+
+    .lcard-preview {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 36px 28px;
+      min-height: 120px;
+    }
+
+    .bg-navy {
+      background: #0A1628;
+    }
+
+    .bg-black {
+      background: #060810;
+    }
+
+    .bg-blue {
+      background: #0B5FFF;
+    }
+
+    .bg-teal {
+      background: #00A688;
+    }
+
+    .bg-white {
+      background: #FFFFFF;
+      border-bottom: .5px solid var(--border);
+    }
+
+    .bg-light {
+      background: #F4F6FA;
+    }
+
+    .bg-trans {
+      background-image: linear-gradient(45deg, #ccc 25%, transparent 25%),
+        linear-gradient(-45deg, #ccc 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #ccc 75%),
+        linear-gradient(-45deg, transparent 75%, #ccc 75%);
+      background-size: 12px 12px;
+      background-position: 0 0, 0 6px, 6px -6px, -6px 0px;
+      background-color: #e8e8e8;
+    }
+
+    .lcard-foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+      border-top: .5px solid var(--border);
+      background: var(--off);
+    }
+
+    .lcard-name {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--slate);
+    }
+
+    .lcard-sub {
+      font-size: 10px;
+      color: var(--gray);
+      margin-top: 1px;
+      font-family: 'Space Mono', monospace;
+    }
+
+    .dl-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 6px 12px;
+      border-radius: 8px;
+      background: var(--blue);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      font-family: 'DM Sans', sans-serif;
+      transition: all .15s;
+      white-space: nowrap;
+    }
+
+    .dl-btn:hover {
+      background: var(--blue-d);
+    }
+
+    .dl-btn svg {
+      width: 11px;
+      height: 11px;
+      flex-shrink: 0;
+    }
+
+    /* ── ICONS SECTION ── */
+    .icons-wrap {
+      background: var(--white);
+      border-radius: 20px;
+      border: .5px solid var(--border);
+      padding: 32px 36px;
+    }
+
+    .icons-row {
+      display: flex;
+      gap: 28px;
+      align-items: flex-end;
+      flex-wrap: wrap;
+    }
+
+    .icon-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .icon-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 9px;
+      color: var(--gray);
+      letter-spacing: .06em;
+    }
+
+    .icon-dl {
+      font-family: 'Space Mono', monospace;
+      font-size: 9px;
+      color: var(--blue);
+      cursor: pointer;
+      border: none;
+      background: none;
+      padding: 3px 8px;
+      border-radius: 5px;
+      border: .5px solid #C5D5FF;
+      transition: all .15s;
+    }
+
+    .icon-dl:hover {
+      background: #EEF4FF;
+    }
+
+    /* ── PALETTE ── */
+    .palette-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .swatch {
+      flex: 1;
+      min-width: 120px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: .5px solid var(--border);
+    }
+
+    .sw-color {
+      height: 64px;
+    }
+
+    .sw-info {
+      padding: 10px 12px;
+      background: var(--white);
+    }
+
+    .sw-name {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--slate);
+    }
+
+    .sw-hex {
+      font-family: 'Space Mono', monospace;
+      font-size: 10px;
+      color: var(--gray);
+      margin-top: 2px;
+    }
+
+    /* ── ANIM CSS ── */
+    @keyframes drawPath {
+      from {
+        stroke-dashoffset: 320;
+      }
+
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(5px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes floatY {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-5px);
+      }
+    }
+
+    @keyframes pulseDot {
+
+      0%,
+      100% {
+        r: 3.5;
+        opacity: 1;
+      }
+
+      50% {
+        r: 6;
+        opacity: .5;
+      }
+    }
+
+    @keyframes shimmer {
+
+      0%,
+      100% {
+        stroke-opacity: 1;
+      }
+
+      50% {
+        stroke-opacity: .45;
+      }
+    }
+
+    .aw1 {
+      stroke-dasharray: 320;
+      stroke-dashoffset: 320;
+      animation: drawPath 1.1s cubic-bezier(.4, 0, .2, 1) .08s forwards, shimmer 3.5s ease 2s infinite;
+    }
+
+    .aw2 {
+      stroke-dasharray: 320;
+      stroke-dashoffset: 320;
+      animation: drawPath 1.1s cubic-bezier(.4, 0, .2, 1) .26s forwards;
+    }
+
+    .aw3 {
+      stroke-dasharray: 320;
+      stroke-dashoffset: 320;
+      animation: drawPath 1.1s cubic-bezier(.4, 0, .2, 1) .42s forwards;
+    }
+
+    .aw4 {
+      stroke-dasharray: 320;
+      stroke-dashoffset: 320;
+      animation: drawPath 1.1s cubic-bezier(.4, 0, .2, 1) .56s forwards;
+    }
+
+    .aw5 {
+      stroke-dasharray: 320;
+      stroke-dashoffset: 320;
+      animation: drawPath 1.1s cubic-bezier(.4, 0, .2, 1) .68s forwards;
+    }
+
+    .at1 {
+      opacity: 0;
+      animation: fadeUp .45s ease 1.05s forwards;
+    }
+
+    .at2 {
+      opacity: 0;
+      animation: fadeUp .45s ease 1.22s forwards;
+    }
+
+    .adot {
+      animation: pulseDot 2.2s ease-in-out 1.6s infinite;
+    }
+
+    .afloat {
+      animation: floatY 4s ease-in-out 1.8s infinite;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <div class="topbar-logo">
+      <svg viewBox="0 0 58 58" fill="none">
+        <rect x="2" y="2" width="54" height="54" rx="12" fill="#0B5FFF" />
+        <path d="M9,42 C9,42 12,20 21,13 C26,9 28,15 24,22 C20,28 14,30 16,37 C18,43 25,46 30,41 C35,36 33,26 30,21"
+          stroke="#fff" stroke-width="3.5" stroke-linecap="round" fill="none" />
+        <path d="M15,43 C15,43 18,23 26,16 C31,12 33,18 30,25 C26,31 20,33 22,39 C24,45 31,47 36,42 C41,37 39,27 36,22"
+          stroke="rgba(255,255,255,.7)" stroke-width="2.6" stroke-linecap="round" fill="none" />
+        <path d="M21,44 C21,44 24,26 31,19 C36,15 39,21 36,28 C32,34 26,36 28,42 C30,47 37,49 42,44 C47,39 45,29 42,24"
+          stroke="#00D4AA" stroke-width="2" stroke-linecap="round" fill="none" opacity=".9" />
+      </svg>
+      <span class="topbar-name">VARATRAZA <span>TECH</span></span>
+    </div>
+    <span class="topbar-tag">BRAND KIT v1.0</span>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">Logo Identity Kit</div>
+      <h1>Varatraza Tech<br><em>Brand Assets</em></h1>
+      <p>Toutes les versions du logo, cohérentes, prêtes à l'emploi. Cliquez sur SVG pour télécharger chaque version.
+      </p>
+      <div class="hero-badges">
+        <span class="hbadge active">9 versions</span>
+        <span class="hbadge">SVG vectoriel</span>
+        <span class="hbadge">Fond transparent inclus</span>
+        <span class="hbadge">5 icônes seules</span>
+        <span class="hbadge">Palette officielle</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="page">
+
+    <!-- ══ ANIMÉ ══ -->
+    <div class="sec-label">Version animée</div>
+    <div class="anim-block">
+      <div class="anim-wrap">
+        <svg id="asvg" class="afloat" viewBox="0 0 310 70" width="310" fill="none">
+          <rect x="2" y="2" width="66" height="66" rx="15" fill="#0B5FFF" />
+          <path class="aw1"
+            d="M10,50 C10,50 13,25 24,16 C30,11 32,18 28,26 C23,34 15,37 18,45 C20,52 30,56 36,49 C42,42 40,30 36,23"
+            stroke="#fff" stroke-width="3.8" stroke-linecap="round" fill="none" />
+          <path class="aw2"
+            d="M17,52 C17,52 20,28 30,19 C36,14 39,21 35,29 C30,37 22,40 25,47 C27,53 37,57 43,50 C49,43 47,31 43,24"
+            stroke="rgba(255,255,255,.68)" stroke-width="2.9" stroke-linecap="round" fill="none" />
+          <path class="aw3"
+            d="M24,53 C24,53 27,31 36,22 C42,17 45,24 41,32 C36,40 28,43 31,50 C33,56 43,59 49,52 C55,45 53,33 49,26"
+            stroke="#00D4AA" stroke-width="2.2" stroke-linecap="round" fill="none" opacity=".95" />
+          <path class="aw4"
+            d="M31,54 C31,54 34,34 42,25 C48,20 51,27 47,35 C42,43 34,46 37,52 C39,57 49,60 55,53 C61,46 59,34 55,27"
+            stroke="#00D4AA" stroke-width="1.5" stroke-linecap="round" fill="none" opacity=".5" />
+          <path class="aw5" d="M38,55 C38,55 41,37 48,28 C54,23 58,30 54,38 C49,46 41,49 44,54 C46,59 56,61 62,54"
+            stroke="#00D4AA" stroke-width="1" stroke-linecap="round" fill="none" opacity=".25" />
+          <circle class="adot" cx="62" cy="54" r="3.5" fill="#00D4AA" />
+          <text class="at1" x="82" y="30" font-family="'DM Sans',system-ui,sans-serif" font-size="22" font-weight="700"
+            fill="#ffffff" letter-spacing="-.5">VARATRAZA</text>
+          <text class="at2" x="84" y="53" font-family="'DM Sans',system-ui,sans-serif" font-size="13.5"
+            font-weight="300" fill="#0B5FFF" letter-spacing="6">TECH</text>
+        </svg>
+      </div>
+      <button class="replay-btn" onclick="replay()">
+        <svg width="13" height="13" viewBox="0 0 16 16" fill="none">
+          <path d="M2 8a6 6 0 1 1 1.5 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+          <path d="M2 12V8h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        Rejouer
+      </button>
+    </div>
+
+    <!-- ══ FONDS SOMBRES ══ -->
+    <div class="sec-label">Logo horizontal — Fonds sombres</div>
+    <div class="logo-grid">
+
+      <!-- Navy -->
+      <div class="lcard">
+        <div class="lcard-preview bg-navy">
+          <svg viewBox="0 0 310 70" width="240" fill="none">
+            <rect x="2" y="2" width="66" height="66" rx="15" fill="#0B5FFF" />
+            <path
+              d="M10,50 C10,50 13,25 24,16 C30,11 32,18 28,26 C23,34 15,37 18,45 C20,52 30,56 36,49 C42,42 40,30 36,23"
+              stroke="#fff" stroke-width="3.8" stroke-linecap="round" fill="none" />
+            <path
+              d="M17,52 C17,52 20,28 30,19 C36,14 39,21 35,29 C30,37 22,40 25,47 C27,53 37,57 43,50 C49,43 47,31 43,24"
+              stroke="rgba(255,255,255,.68)" stroke-width="2.9" stroke-linecap="round" fill="none" />
+            <path
+              d="M24,53 C24,53 27,31 36,22 C42,17 45,24 41,32 C36,40 28,43 31,50 C33,56 43,59 49,52 C55,45 53,33 49,26"
+              stroke="#00D4AA" stroke-width="2.2" stroke-linecap="round" fill="none" opacity=".95" />
+            <path
+              d="M31,54 C31,54 34,34 42,25 C48,20 51,27 47,35 C42,43 34,46 37,52 C39,57 49,60 55,53 C61,46 59,34 55,27"
+              stroke="#00D4AA" stroke-width="1.5" stroke-linecap="round" fill="none" opacity=".5" />
+            <path d="M38,55 C38,55 41,37 48,28 C54,23 58,30 54,38 C49,46 41,49 44,54 C46,59 56,61 62,54"
+              stroke="#00D4AA" stroke-width="1" stroke-linecap="round" fill="none" opacity=".25" />
+            <text x="82" y="30" font-family="DM Sans,system-ui,sans-serif" font-size="22" font-weight="700"
+              fill="#ffffff" letter-spacing="-.5">VARATRAZA</text>
+            <text x="84" y="53" font-family="DM Sans,system-ui,sans-serif" font-size="13.5" font-weight="300"
+              fill="#0B5FFF" letter-spacing="6">TECH</text>
+          </svg>
+        </div>
+        <div class="lcard-foot">
+          <div>
+            <div class="lcard-name">Fond Navy</div>
+            <div class="lcard-sub">#0A1628</div>
+          </div>
+          <button class="dl-btn" onclick="dl('navy')"><svg viewBox="0 0 12 12" fill="none">
+              <path d="M6 1v7M3 5l3 3 3-3M1 10h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+            </svg>SVG</button>
+        </div>
+      </div>
+
+      <!-- Noir -->
+      <div class="lcard">
+        <div class="lcard-preview bg-black">
+          <svg viewBox="0 0 310 70" width="240" fill="none">
+            <rect x="2" y="2" width="66" height="66" rx="15" fill="#0B5FFF" />
+            <path
+              d="M10,50 C10,50 13,25 24,16 C30,11 32,18 28,26 C23,34 15,37 18,45 C20,52 30,56 36,49 C42,42 40,30 36,23"
+              stroke="#fff" stroke-width="3.8" stroke-linecap="round" fill="none" />
+            <path
+              d="M17,52 C17,52 20,28 30,19 C36,14 39,21 35,29 C30,37 22,40 25,47 C27,53 37,57 43,50 C49,43 47,31 43,24"
+              stroke="rgba(255,255,255,.68)" stroke-width="2.9" stroke-linecap="round" fill="none" />
+            <path
+              d="M24,53 C24,53 27,31 36,22 C42,17 45,24 41,32 C36,40 28,43 31,50 C33,56 43,59 49,52 C55,45 53,33 49,26"
+              stroke="#00D4AA" stroke-width="2.2" stroke-linecap="round" fill="none" opacity=".95" />
+            <path
+              d="M31,54 C31,54 34,34 42,25 C48,20 51,27 47,35 C42,43 34,46 37,52 C39,57 49,60 55,53 C61,46 59,34 55,27"
+              stroke="#00D4AA" stroke-width="1.5" stroke-linecap="round" fill="none" opacity=".5" />
+            <path d="M38,55 C38,55 41,37 48,28 C54,23 58,30 54,38 C49,46 41,49 44,54 C46,59 56,61 62,54"
+              stroke="#00D4AA" stroke-width="1" stroke-linecap="round" fill="none" opacity=".25" />
+            <text x="82" y="30" font-family="DM Sans,system-ui,sans-serif" font-size="22" font-weight="700"
+              fill="#F0F4FF" letter-spacing="-.5">VARATRAZA</text>
+            <text x="84" y="53" font-family="DM Sans,system-ui,sans-serif" font-size="13.5" font-weight="300"
+              fill="#0B5FFF" letter-spacing="6">TECH</text>
+          </svg>
+        </div>
+        <div class="lcard-foot">
+          <div>
+            <div class="lcard-name">Fond Noir</div>
+            <div class="lcard-sub">#060810</div>
+          </div>
+          <button class="dl-btn" onclick="dl('black')"><svg viewBox="0 0 12 12" fill="none">
+              <path d="M6 1v7M3 5l3 3 3-3M1 10h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+            </svg>SVG</button>
+        </div>
+      </div>
+
+      <!-- Fond bleu -->
+      <div class="lcard">
+        <div class="lcard-preview bg-blue">
+          <svg viewBox="0 0 310 70" width="240" fill="none">
+            <rect x="2" y="2" width="66" height="66" rx="15" fill="rgba(255,255,255,.16)" stroke="rgba(255,255,255,.28)"
+              stroke-width=".8" />
+            <path
+              d="M10,50 C10,50 13,25 24,16 C30,11 32,18 28,26 C23,34 15,37 18,45 C20,52 30,56 36,49 C42,42 40,30 36,23"
+              stroke="#fff" stroke-width="3.8" stroke-linecap="round" fill="none" />
+            <path
+              d="M17,52 C17,52 20,28 30,19 C36,14 39,21 35,29 C30,37 22,40 25,47 C27,53 37,57 43,50 C49,43 47,31 43,24"
+              stroke="rgba(255,255,255,.68)" stroke-width="2.9" stroke-linecap="round" fill="none" />
+            <path
+              d="M24,53 C24,53 27,31 36,22 C42,17 45,24 41,32 C36,40 28,43 31,50 C33,56 43,59 49,52 C55,45 53,33 49,26"
+              stroke="#00D4AA" stroke-width="2.2" stroke-linecap="round" fill="none" opacity=".95" />
+            <path
+              d="M31,54 C31,54 34,34 42,25 C48,20 51,27 47,35 C42,43 34,46 37,52 C39,57 49,60 55,53 C61,46 59,34 55,27"
+              stroke="#00D4AA" stroke-width="1.5" stroke-linecap="round" fill="none" opacity=".5" />
+            <path d="M38,55 C38,55 41,37 48,28 C54,23 58,30 54,38 C49,46 41,49 44,54 C46,59 56,61 62,54"
+              stroke="#00D4AA" stroke-width="1" stroke-linecap="round" fill="none" opacity=".25" />
+            <text x="82" y="30" font-family="DM Sans,system-ui,sans-serif" font-size="22" font-weight="700"
+              fill="#ffffff" letter-spacing="-.5">VARATRAZA</text>
+            <text x="84" y="53" font-family="DM Sans,system-ui,sans-serif" font-size="13.5" font-weight="300"
+              fill="rgba(255,255,255,.6)" letter-spacing="6">TECH</text>
+          </svg>
+        </div>
+        <div class="lcard-foot">
+          <div>
+            <div class="lcard-name">Fond Bleu</div>
+            <div class="lcard-sub">#0B5FFF</div>
+          </div>
+          <button class="dl-btn" onclick="dl('blue')"><svg viewBox="0 0 12 12" fill="none">
+              <path d="M6 1v7M3 5l3 3 3-3M1 10h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+            </svg>SVG</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ══ FONDS CLAIRS ══ -->
+    <div class="sec-label">Logo horizontal — Fonds clairs</div>
+    <div class="logo-grid">
+
+      <!-- Blanc -->
+      <div class="lcard">
+        <div class="lcard-preview bg-white">
+          <svg viewBox="0 0 310 70" width="240" fill="none">
+            <rect x="2" y="2" width="66" height="66" rx="15" fill="#0B5FFF" />
+            <path
+              d="M10,50 C10,50 13,25 24,16 C30,11 32,18 28,26 C23,34 15,37 18,45 C20,52 30,56 36,49 C42,42 40,30 36,23"
+              stroke="#fff" stroke-width="3.8" stroke-linecap="round" fill="none" />
+            <path
+              d="M17,52 C17,52 20,28 30,19 C36,14 39,21 35,29 C30,37 22,40 25,47 C27,53 37,57 43,50 C49,43 47,31 43,24"
+              stroke="rgba(255,255,255,.68)" stroke-width="2.9" stroke-linecap="round" fill="none" />
+            <path
+              d="M24,53 C24,53 27,31 36,22 C42,17 45,24 41,32 C36,40 28,43 31,50 C33,56 43,59 49,52 C55,45 53,33 49,26"
+              stroke="#00D4AA" stroke-width="2.2" stroke-linecap="round" fill="none" opacity=".95" />
+            <path
+              d="M31,54 C31,54 34,34 42,25 C48,20 51,27 47,35 C42,43 34,46 37,52 C39,57 49,60 55,53 C61,46 59,34 55,27"
+              stroke="#00D4AA" stroke-width="1.5" stroke-linecap="round" fill="none" opacity=".5" />
+            <path d="M38,55 C38,55 41,37 48,28 C54,23 58,30 54,38 C49,46 41,49 44,54 C46,59 56,61 62,54"
+              stroke="#00D4AA" stroke-width="1" stroke-linecap="round" fill="none" opacity=".25" />
+            <text x="82" y="30" font-family="DM Sans,system-ui,sans-serif" font-size="22" font-weight="700"
+              fill="#1A2340" letter-spacing="-.5">VARATRAZA</text>
+            <text x="84" y="53" font-family="DM Sans,system-ui,sans-serif" font-size="13.5" font-weight="300"
+              fill="#0B5FFF" letter-spacing="6">TECH</text>
+          </svg>
+        </div>
+        <div class="lcard-foot">
+          <div>
+            <div class="lcard-name">Fond Blanc</div>
+            <div class="lcard-sub">#FFFFFF</div>
+          </div>
+          <button class="dl-btn" onclick="dl('white')"><svg viewBox="0 0 12 12" fill="none">
+              <path d="M6 1v7M3 5l3 3 3-3M1 10h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+            </svg>SVG</button>
+        </div>
+      </div>
+
+      <!-- Gris clair -->
+      <div class="lcard">
+        <div class="lcard-preview bg-light">
+          <svg viewBox="0 0 310 70" width="240" fill="none">
+            <rect x="2" y="2" width="66" height="66" rx="15" fill="#0B5FFF" />
+            <path
+              d="M10,50 C10,50 13,25 24,16 C30,11 32,18 28,26 C23,34 15,37 18,45 C20,52 30,56 36,49 C42,42 40,30 36,23"
+              stroke="#fff" stroke-width="3.8" stroke-linecap="round" fill="none" />
+            <path
+              d="M17,52 C17,52 20,28 30,19 C36,14 39,21 35,29 C30,37 22,40 25,47 C27,53 37,57 43,50 C49,43 47,31 43,24"
+              stroke="rgba(255,255,255,.68)" stroke-width="2.9" stroke-linecap="round" fill="none" />
+            <path
+              d="M24,53 C24,53 27,31 36,22 C42,17 45,24 41,32 C36,40 28,43 31,50 C33,56 43,59 49,52 C55,45 53,33 49,26"
+              stroke="#00D4AA" stroke-width="2.2" stroke-linecap="round" fill="none" opacity=".95" />
+            <path
+              d="M31,54 C31,54 34,34 42,25 C48,20 51,27 47,35 C42,43 34,46 37,52 C39,57 49,60 55,53 C61,46 59,34 55,27"
+              stroke="#00D4AA" stroke-width="1.5" stroke-linecap="round" fill="none" opacity=".5" />
+            <path d="M38,55 C38,55 41,37 48,28 C54,23 58,30 54,38 C49,46 41,49 44,54 C46,59 56,61 62,54"
+              stroke="#00D4AA" stroke-width="1" stroke-linecap="round" fill="none" opacity=".25" />
+            <text x="82" y="30" font-family="DM Sans,system-ui,sans-serif" font-size="22" font-weight="700"
+              fill="#1A2340" letter-spacing="-.5">VARATRAZA</text>
+            <text x="84" y="53" font-family="DM Sans,system-ui,sans-serif" font-size="13.5" font-weight="300"
+              fill="#0B5FFF" letter-spacing="6">TECH</text>
+          </svg>
+        </div>
+        <div class="lcard-foot">
+          <div>
+            <div class="lcard-name">Fond Gris</div>
+            <div class="lcard-sub">#F4F6FA</div>
+          </div>
+          <button class="dl-btn" onclick="dl('light')"><svg viewBox="0 0 12 12" fill="none">
+              <path d="M6 1v7M3 5l3 3 3-3M1 10h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+            </svg>SVG</button>
+        </div>
+      </div>
+
+      <!-- Teal -->
+      <div class="lcard">
+        <div class="lcard-preview bg-teal">
+          <svg viewBox="0 0 310 70" width="240" fill="none">
+            <rect x="2" y="2" width="66" height="66" rx="15" fill="rgba(255,255,255,.18)" stroke="rgba(255,255,255,.3)"
+              stroke-width=".8" />
+            <path
+              d="M10,50 C10,50 13,25 24,16 C30,11 32,18 28,26 C23,34 15,37 18,45 C20,52 30,56 36,49 C42,42 40,30 36,23"
+              stroke="#fff" stroke-width="3.8" stroke-linecap="round" fill="none" />
+            <path
+              d="M17,52 C17,52 20,28 30,19 C36,14 39,21 35,29 C30,37 22,40 25,47 C27,53 37,57 43,50 C49,43 47,31 43,24"
+              stroke="rgba(255,255,255,.68)" stroke-width="2.9" stroke-linecap="round" fill="none" />
+            <path
+              d="M24,53 C24,53 27,31 36,22 C42,17 45,24 41,32 C36,40 28,43 31,50 C33,56 43,59 49,52 C55,45 53,33 49,26"
+              stroke="#004D3D" stroke-width="2.2" stroke-linecap="round" fill="none" opacity=".9" />
+            <path
+              d="M31,54 C31,54 34,34 42,25 C48,20 51,27 47,35 C42,43 34,46 37,52 C39,57 49,60 55,53 C61,46 59,34 55,27"
+              stroke="#004D3D" stroke-width="1.5" stroke-linecap="round" fill="none" opacity=".5" />
+            <path d="M38,55 C38,55 41,37 48,28 C54,23 58,30 54,38 C49,46 41,49 44,54 C46,59 56,61 62,54"
+              stroke="#004D3D" stroke-width="1" stroke-linecap="round" fill="none" opacity=".25" />
+            <text x="82" y="30" font-family="DM Sans,system-ui,sans-serif" font-size="22" font-weight="700"
+              fill="#ffffff" letter-spacing="-.5">VARATRAZA</text>
+            <text x="84" y="53" font-family="DM Sans,system-ui,sans-serif" font-size="13.5" font-weight="300"
+              fill="rgba(255,255,255,.65)" letter-spacing="6">TECH</text>
+          </svg>
+        </div>
+        <div class="lcard-foot">
+          <div>
+            <div class="lcard-name">Fond Teal</div>
+            <div class="lcard-sub">#00A688</div>
+          </div>
+          <button class="dl-btn" onclick="dl('teal')"><svg viewBox="0 0 12 12" fill="none">
+              <path d="M6 1v7M3 5l3 3 3-3M1 10h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+            </svg>SVG</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ══ SANS FOND ══ -->
+    <div class="sec-label">Logo sans fond — Transparent</div>
+    <div class="logo-grid">
+
+      <!-- Transparent dark text -->
+      <div class="lcard">
+        <div class="lcard-preview bg-trans">
+          <svg viewBox="0 0 310 70" width="240" fill="none">
+            <rect x="2" y="2" width="66" height="66" rx="15" fill="#0B5FFF" />
+            <path
+              d="M10,50 C10,50 13,25 24,16 C30,11 32,18 28,26 C23,34 15,37 18,45 C20,52 30,56 36,49 C42,42 40,30 36,23"
+              stroke="#fff" stroke-width="3.8" stroke-linecap="round" fill="none" />
+            <path
+              d="M17,52 C17,52 20,28 30,19 C36,14 39,21 35,29 C30,37 22,40 25,47 C27,53 37,57 43,50 C49,43 47,31 43,24"
+              stroke="rgba(255,255,255,.68)" stroke-width="2.9" stroke-linecap="round" fill="none" />
+            <path
+              d="M24,53 C24,53 27,31 36,22 C42,17 45,24 41,32 C36,40 28,43 31,50 C33,56 43,59 49,52 C55,45 53,33 49,26"
+              stroke="#00D4AA" stroke-width="2.2" stroke-linecap="round" fill="none" opacity=".95" />
+            <path
+              d="M31,54 C31,54 34,34 42,25 C48,20 51,27 47,35 C42,43 34,46 37,52 C39,57 49,60 55,53 C61,46 59,34 55,27"
+              stroke="#00D4AA" stroke-width="1.5" stroke-linecap="round" fill="none" opacity=".5" />
+            <path d="M38,55 C38,55 41,37 48,28 C54,23 58,30 54,38 C49,46 41,49 44,54 C46,59 56,61 62,54"
+              stroke="#00D4AA" stroke-width="1" stroke-linecap="round" fill="none" opacity=".25" />
+            <text x="82" y="30" font-family="DM Sans,system-ui,sans-serif" font-size="22" font-weight="700"
+              fill="#1A2340" letter-spacing="-.5">VARATRAZA</text>
+            <text x="84" y="53" font-family="DM Sans,system-ui,sans-serif" font-size="13.5" font-weight="300"
+              fill="#0B5FFF" letter-spacing="6">TECH</text>
+          </svg>
+        </div>
+        <div class="lcard-foot">
+          <div>
+            <div class="lcard-name">Transparent — Dark</div>
+            <div class="lcard-sub">Pour fonds clairs</div>
+          </div>
+          <button class="dl-btn" onclick="dl('trans-dark')"><svg viewBox="0 0 12 12" fill="none">
+              <path d="M6 1v7M3 5l3 3 3-3M1 10h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+            </svg>SVG</button>
+        </div>
+      </div>
+
+      <!-- Transparent light text -->
+      <div class="lcard">
+        <div class="lcard-preview bg-navy" style="background:#2a2a3a">
+          <svg viewBox="0 0 310 70" width="240" fill="none">
+            <rect x="2" y="2" width="66" height="66" rx="15" fill="#0B5FFF" />
+            <path
+              d="M10,50 C10,50 13,25 24,16 C30,11 32,18 28,26 C23,34 15,37 18,45 C20,52 30,56 36,49 C42,42 40,30 36,23"
+              stroke="#fff" stroke-width="3.8" stroke-linecap="round" fill="none" />
+            <path
+              d="M17,52 C17,52 20,28 30,19 C36,14 39,21 35,29 C30,37 22,40 25,47 C27,53 37,57 43,50 C49,43 47,31 43,24"
+              stroke="rgba(255,255,255,.68)" stroke-width="2.9" stroke-linecap="round" fill="none" />
+            <path
+              d="M24,53 C24,53 27,31 36,22 C42,17 45,24 41,32 C36,40 28,43 31,50 C33,56 43,59 49,52 C55,45 53,33 49,26"
+              stroke="#00D4AA" stroke-width="2.2" stroke-linecap="round" fill="none" opacity=".95" />
+            <path
+              d="M31,54 C31,54 34,34 42,25 C48,20 51,27 47,35 C42,43 34,46 37,52 C39,57 49,60 55,53 C61,46 59,34 55,27"
+              stroke="#00D4AA" stroke-width="1.5" stroke-linecap="round" fill="none" opacity=".5" />
+            <path d="M38,55 C38,55 41,37 48,28 C54,23 58,30 54,38 C49,46 41,49 44,54 C46,59 56,61 62,54"
+              stroke="#00D4AA" stroke-width="1" stroke-linecap="round" fill="none" opacity=".25" />
+            <text x="82" y="30" font-family="DM Sans,system-ui,sans-serif" font-size="22" font-weight="700"
+              fill="#ffffff" letter-spacing="-.5">VARATRAZA</text>
+            <text x="84" y="53" font-family="DM Sans,system-ui,sans-serif" font-size="13.5" font-weight="300"
+              fill="#0B5FFF" letter-spacing="6">TECH</text>
+          </svg>
+        </div>
+        <div class="lcard-foot">
+          <div>
+            <div class="lcard-name">Transparent — Light</div>
+            <div class="lcard-sub">Pour fonds sombres</div>
+          </div>
+          <button class="dl-btn" onclick="dl('trans-light')"><svg viewBox="0 0 12 12" fill="none">
+              <path d="M6 1v7M3 5l3 3 3-3M1 10h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+            </svg>SVG</button>
+        </div>
+      </div>
+
+      <!-- Icône seule transparente -->
+      <div class="lcard">
+        <div class="lcard-preview bg-trans">
+          <svg viewBox="0 0 70 70" width="90" fill="none">
+            <rect x="2" y="2" width="66" height="66" rx="15" fill="#0B5FFF" />
+            <path
+              d="M10,50 C10,50 13,25 24,16 C30,11 32,18 28,26 C23,34 15,37 18,45 C20,52 30,56 36,49 C42,42 40,30 36,23"
+              stroke="#fff" stroke-width="3.8" stroke-linecap="round" fill="none" />
+            <path
+              d="M17,52 C17,52 20,28 30,19 C36,14 39,21 35,29 C30,37 22,40 25,47 C27,53 37,57 43,50 C49,43 47,31 43,24"
+              stroke="rgba(255,255,255,.68)" stroke-width="2.9" stroke-linecap="round" fill="none" />
+            <path
+              d="M24,53 C24,53 27,31 36,22 C42,17 45,24 41,32 C36,40 28,43 31,50 C33,56 43,59 49,52 C55,45 53,33 49,26"
+              stroke="#00D4AA" stroke-width="2.2" stroke-linecap="round" fill="none" opacity=".95" />
+            <path
+              d="M31,54 C31,54 34,34 42,25 C48,20 51,27 47,35 C42,43 34,46 37,52 C39,57 49,60 55,53 C61,46 59,34 55,27"
+              stroke="#00D4AA" stroke-width="1.5" stroke-linecap="round" fill="none" opacity=".5" />
+            <path d="M38,55 C38,55 41,37 48,28 C54,23 58,30 54,38 C49,46 41,49 44,54 C46,59 56,61 62,54"
+              stroke="#00D4AA" stroke-width="1" stroke-linecap="round" fill="none" opacity=".25" />
+          </svg>
+        </div>
+        <div class="lcard-foot">
+          <div>
+            <div class="lcard-name">Icône seule</div>
+            <div class="lcard-sub">Transparent</div>
+          </div>
+          <button class="dl-btn" onclick="dl('icon-trans')"><svg viewBox="0 0 12 12" fill="none">
+              <path d="M6 1v7M3 5l3 3 3-3M1 10h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+            </svg>SVG</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ══ ICÔNES ══ -->
+    <div class="sec-label">Icônes seules — Toutes tailles</div>
+    <div class="icons-wrap">
+      <div class="icons-row">
+
+        <div class="icon-col">
+          <svg viewBox="0 0 70 70" width="96" fill="none">
+            <rect x="2" y="2" width="66" height="66" rx="15" fill="#0B5FFF" />
+            <path
+              d="M10,50 C10,50 13,25 24,16 C30,11 32,18 28,26 C23,34 15,37 18,45 C20,52 30,56 36,49 C42,42 40,30 36,23"
+              stroke="#fff" stroke-width="3.8" stroke-linecap="round" fill="none" />
+            <path
+              d="M17,52 C17,52 20,28 30,19 C36,14 39,21 35,29 C30,37 22,40 25,47 C27,53 37,57 43,50 C49,43 47,31 43,24"
+              stroke="rgba(255,255,255,.68)" stroke-width="2.9" stroke-linecap="round" fill="none" />
+            <path
+              d="M24,53 C24,53 27,31 36,22 C42,17 45,24 41,32 C36,40 28,43 31,50 C33,56 43,59 49,52 C55,45 53,33 49,26"
+              stroke="#00D4AA" stroke-width="2.2" stroke-linecap="round" fill="none" opacity=".95" />
+            <path
+              d="M31,54 C31,54 34,34 42,25 C48,20 51,27 47,35 C42,43 34,46 37,52 C39,57 49,60 55,53 C61,46 59,34 55,27"
+              stroke="#00D4AA" stroke-width="1.5" stroke-linecap="round" fill="none" opacity=".5" />
+            <path d="M38,55 C38,55 41,37 48,28 C54,23 58,30 54,38 C49,46 41,49 44,54 C46,59 56,61 62,54"
+              stroke="#00D4AA" stroke-width="1" stroke-linecap="round" fill="none" opacity=".25" />
+          </svg>
+          <span class="icon-label">96px · App</span>
+          <button class="icon-dl" onclick="dl('i96')">SVG</button>
+        </div>
+
+        <div class="icon-col">
+          <svg viewBox="0 0 70 70" width="64" fill="none">
+            <rect x="2" y="2" width="66" height="66" rx="14" fill="#0B5FFF" />
+            <path
+              d="M10,50 C10,50 13,25 24,16 C30,11 32,18 28,26 C23,34 15,37 18,45 C20,52 30,56 36,49 C42,42 40,30 36,23"
+              stroke="#fff" stroke-width="3.8" stroke-linecap="round" fill="none" />
+            <path
+              d="M17,52 C17,52 20,28 30,19 C36,14 39,21 35,29 C30,37 22,40 25,47 C27,53 37,57 43,50 C49,43 47,31 43,24"
+              stroke="rgba(255,255,255,.68)" stroke-width="2.9" stroke-linecap="round" fill="none" />
+            <path
+              d="M24,53 C24,53 27,31 36,22 C42,17 45,24 41,32 C36,40 28,43 31,50 C33,56 43,59 49,52 C55,45 53,33 49,26"
+              stroke="#00D4AA" stroke-width="2.2" stroke-linecap="round" fill="none" opacity=".95" />
+            <path
+              d="M31,54 C31,54 34,34 42,25 C48,20 51,27 47,35 C42,43 34,46 37,52 C39,57 49,60 55,53 C61,46 59,34 55,27"
+              stroke="#00D4AA" stroke-width="1.5" stroke-linecap="round" fill="none" opacity=".5" />
+            <path d="M38,55 C38,55 41,37 48,28 C54,23 58,30 54,38 C49,46 41,49 44,54 C46,59 56,61 62,54"
+              stroke="#00D4AA" stroke-width="1" stroke-linecap="round" fill="none" opacity=".25" />
+          </svg>
+          <span class="icon-label">64px · Web</span>
+          <button class="icon-dl" onclick="dl('i64')">SVG</button>
+        </div>
+
+        <div class="icon-col">
+          <svg viewBox="0 0 70 70" width="44" fill="none">
+            <rect x="2" y="2" width="66" height="66" rx="12" fill="#0B5FFF" />
+            <path
+              d="M10,50 C10,50 13,25 24,16 C30,11 32,18 28,26 C23,34 15,37 18,45 C20,52 30,56 36,49 C42,42 40,30 36,23"
+              stroke="#fff" stroke-width="3.8" stroke-linecap="round" fill="none" />
+            <path
+              d="M17,52 C17,52 20,28 30,19 C36,14 39,21 35,29 C30,37 22,40 25,47 C27,53 37,57 43,50 C49,43 47,31 43,24"
+              stroke="rgba(255,255,255,.68)" stroke-width="2.9" stroke-linecap="round" fill="none" />
+            <path
+              d="M24,53 C24,53 27,31 36,22 C42,17 45,24 41,32 C36,40 28,43 31,50 C33,56 43,59 49,52 C55,45 53,33 49,26"
+              stroke="#00D4AA" stroke-width="2.2" stroke-linecap="round" fill="none" opacity=".95" />
+            <path
+              d="M31,54 C31,54 34,34 42,25 C48,20 51,27 47,35 C42,43 34,46 37,52 C39,57 49,60 55,53 C61,46 59,34 55,27"
+              stroke="#00D4AA" stroke-width="1.5" stroke-linecap="round" fill="none" opacity=".5" />
+            <path d="M38,55 C38,55 41,37 48,28 C54,23 58,30 54,38 C49,46 41,49 44,54 C46,59 56,61 62,54"
+              stroke="#00D4AA" stroke-width="1" stroke-linecap="round" fill="none" opacity=".25" />
+          </svg>
+          <span class="icon-label">44px · UI</span>
+          <button class="icon-dl" onclick="dl('i44')">SVG</button>
+        </div>
+
+        <div class="icon-col">
+          <svg viewBox="0 0 70 70" width="28" fill="none">
+            <rect x="2" y="2" width="66" height="66" rx="10" fill="#0B5FFF" />
+            <path d="M9,50 C9,50 13,22 25,13 C31,8 34,16 30,25 C24,35 14,38 18,47 C20,54 32,57 38,50 C44,43 42,29 38,21"
+              stroke="#fff" stroke-width="5" stroke-linecap="round" fill="none" />
+            <path
+              d="M20,52 C20,52 24,27 34,18 C40,13 44,21 40,30 C34,40 24,43 28,51 C30,57 42,59 48,52 C54,45 52,31 48,23"
+              stroke="#00D4AA" stroke-width="3" stroke-linecap="round" fill="none" opacity=".85" />
+          </svg>
+          <span class="icon-label">28px · Favicon</span>
+          <button class="icon-dl" onclick="dl('i28')">SVG</button>
+        </div>
+
+        <div class="icon-col">
+          <svg viewBox="0 0 62 62" width="64" fill="none">
+            <circle cx="31" cy="31" r="29" fill="#0B5FFF" />
+            <path
+              d="M11,46 C11,46 15,22 25,14 C31,10 33,17 30,25 C25,33 17,36 20,44 C22,50 31,53 37,46 C43,39 41,27 37,20"
+              stroke="#fff" stroke-width="3.8" stroke-linecap="round" fill="none" />
+            <path
+              d="M18,47 C18,47 22,25 31,17 C37,13 40,20 37,28 C31,36 23,39 26,47 C28,52 37,54 43,47 C49,40 47,28 43,21"
+              stroke="rgba(255,255,255,.62)" stroke-width="2.9" stroke-linecap="round" fill="none" />
+            <path
+              d="M25,48 C25,48 29,29 37,21 C43,16 46,23 43,31 C37,39 29,42 32,49 C34,54 43,56 49,49 C55,42 53,30 49,23"
+              stroke="#00D4AA" stroke-width="2.2" stroke-linecap="round" fill="none" opacity=".95" />
+          </svg>
+          <span class="icon-label">Rond · Avatar</span>
+          <button class="icon-dl" onclick="dl('iround')">SVG</button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ══ PALETTE ══ -->
+    <div class="sec-label">Palette officielle</div>
+    <div class="palette-row">
+      <div class="swatch">
+        <div class="sw-color" style="background:#0B5FFF"></div>
+        <div class="sw-info">
+          <div class="sw-name">Varatraza Blue</div>
+          <div class="sw-hex">#0B5FFF</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="sw-color" style="background:#0A1628"></div>
+        <div class="sw-info">
+          <div class="sw-name">Navy Deep</div>
+          <div class="sw-hex">#0A1628</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="sw-color" style="background:#00D4AA"></div>
+        <div class="sw-info">
+          <div class="sw-name">Varatraza Teal</div>
+          <div class="sw-hex">#00D4AA</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="sw-color" style="background:#1A2340"></div>
+        <div class="sw-info">
+          <div class="sw-name">Slate</div>
+          <div class="sw-hex">#1A2340</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="sw-color" style="background:#F4F6FA;border-bottom:.5px solid var(--border)"></div>
+        <div class="sw-info">
+          <div class="sw-name">Off White</div>
+          <div class="sw-hex">#F4F6FA</div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      style="margin-top:48px;text-align:center;font-size:12px;color:var(--gray);font-family:'Space Mono',monospace;letter-spacing:.06em">
+      VARATRAZA TECH — BRAND KIT v1.0 · ANTANANARIVO, MADAGASCAR
+    </div>
+
+  </div>
+
+  <script>
+    /* ── ICÔNE SVG commune ── */
+    const ICON_PATHS = `
+  <path d="M10,50 C10,50 13,25 24,16 C30,11 32,18 28,26 C23,34 15,37 18,45 C20,52 30,56 36,49 C42,42 40,30 36,23" stroke-linecap="round" fill="none" stroke-width="3.8"/>
+  <path d="M17,52 C17,52 20,28 30,19 C36,14 39,21 35,29 C30,37 22,40 25,47 C27,53 37,57 43,50 C49,43 47,31 43,24" stroke-linecap="round" fill="none" stroke-width="2.9" opacity=".68"/>
+  <path d="M24,53 C24,53 27,31 36,22 C42,17 45,24 41,32 C36,40 28,43 31,50 C33,56 43,59 49,52 C55,45 53,33 49,26" stroke="#00D4AA" stroke-linecap="round" fill="none" stroke-width="2.2" opacity=".95"/>
+  <path d="M31,54 C31,54 34,34 42,25 C48,20 51,27 47,35 C42,43 34,46 37,52 C39,57 49,60 55,53 C61,46 59,34 55,27" stroke="#00D4AA" stroke-linecap="round" fill="none" stroke-width="1.5" opacity=".5"/>
+  <path d="M38,55 C38,55 41,37 48,28 C54,23 58,30 54,38 C49,46 41,49 44,54 C46,59 56,61 62,54" stroke="#00D4AA" stroke-linecap="round" fill="none" stroke-width="1" opacity=".25"/>`;
+
+    const WORD = (fill1, fill2) => `
+  <text x="82" y="30" font-family="DM Sans,system-ui,sans-serif" font-size="22" font-weight="700" fill="${fill1}" letter-spacing="-.5">VARATRAZA</text>
+  <text x="84" y="53" font-family="DM Sans,system-ui,sans-serif" font-size="13.5" font-weight="300" fill="${fill2}" letter-spacing="6">TECH</text>`;
+
+    const ICON_BOX = (rx, fill, strokeColor) =>
+      `<rect x="2" y="2" width="66" height="66" rx="${rx}" fill="${fill}"${strokeColor ? ` stroke="${strokeColor}" stroke-width=".8"` : ''}/>`;
+
+    const ICON_PATHS_WHITE = ICON_PATHS.replace(/stroke-width/g, 'stroke="#fff" stroke-width').replace(/stroke="#00D4AA"/g, 'stroke="#00D4AA"');
+
+    const SVG_OPEN = (w, h) => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}" width="${w * 2}" height="${h * 2}" fill="none">`;
+
+    const LOGOS = {
+      'navy': () => SVG_OPEN(310, 70) + `<rect width="310" height="70" fill="#0A1628"/>` + ICON_BOX(15, '#0B5FFF') + mkPaths('#fff') + WORD('#ffffff', '#0B5FFF') + '</svg>',
+      'black': () => SVG_OPEN(310, 70) + `<rect width="310" height="70" fill="#060810"/>` + ICON_BOX(15, '#0B5FFF') + mkPaths('#fff') + WORD('#F0F4FF', '#0B5FFF') + '</svg>',
+      'blue': () => SVG_OPEN(310, 70) + `<rect width="310" height="70" fill="#0B5FFF"/>` + ICON_BOX(15, 'rgba(255,255,255,.16)', 'rgba(255,255,255,.28)') + mkPaths('#fff') + WORD('#ffffff', 'rgba(255,255,255,.6)') + '</svg>',
+      'white': () => SVG_OPEN(310, 70) + `<rect width="310" height="70" fill="#ffffff"/>` + ICON_BOX(15, '#0B5FFF') + mkPaths('#fff') + WORD('#1A2340', '#0B5FFF') + '</svg>',
+      'light': () => SVG_OPEN(310, 70) + `<rect width="310" height="70" fill="#F4F6FA"/>` + ICON_BOX(15, '#0B5FFF') + mkPaths('#fff') + WORD('#1A2340', '#0B5FFF') + '</svg>',
+      'teal': () => SVG_OPEN(310, 70) + `<rect width="310" height="70" fill="#00A688"/>` + ICON_BOX(15, 'rgba(255,255,255,.18)', 'rgba(255,255,255,.3)') + mkPathsTeal() + WORD('#ffffff', 'rgba(255,255,255,.65)') + '</svg>',
+      'trans-dark': () => SVG_OPEN(310, 70) + ICON_BOX(15, '#0B5FFF') + mkPaths('#fff') + WORD('#1A2340', '#0B5FFF') + '</svg>',
+      'trans-light': () => SVG_OPEN(310, 70) + ICON_BOX(15, '#0B5FFF') + mkPaths('#fff') + WORD('#ffffff', '#0B5FFF') + '</svg>',
+      'icon-trans': () => SVG_OPEN(70, 70) + ICON_BOX(15, '#0B5FFF') + mkPaths('#fff') + '</svg>',
+      'i96': () => SVG_OPEN(70, 70) + ICON_BOX(15, '#0B5FFF') + mkPaths('#fff') + '</svg>',
+      'i64': () => SVG_OPEN(70, 70) + ICON_BOX(14, '#0B5FFF') + mkPaths('#fff') + '</svg>',
+      'i44': () => SVG_OPEN(70, 70) + ICON_BOX(12, '#0B5FFF') + mkPaths('#fff') + '</svg>',
+      'i28': () => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 70" width="56" height="56" fill="none"><rect x="2" y="2" width="66" height="66" rx="10" fill="#0B5FFF"/><path d="M9,50 C9,50 13,22 25,13 C31,8 34,16 30,25 C24,35 14,38 18,47 C20,54 32,57 38,50 C44,43 42,29 38,21" stroke="#fff" stroke-width="5" stroke-linecap="round" fill="none"/><path d="M20,52 C20,52 24,27 34,18 C40,13 44,21 40,30 C34,40 24,43 28,51 C30,57 42,59 48,52 C54,45 52,31 48,23" stroke="#00D4AA" stroke-width="3" stroke-linecap="round" fill="none" opacity=".85"/></svg>`,
+      'iround': () => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 62 62" width="124" height="124" fill="none"><circle cx="31" cy="31" r="29" fill="#0B5FFF"/><path d="M11,46 C11,46 15,22 25,14 C31,10 33,17 30,25 C25,33 17,36 20,44 C22,50 31,53 37,46 C43,39 41,27 37,20" stroke="#fff" stroke-width="3.8" stroke-linecap="round" fill="none"/><path d="M18,47 C18,47 22,25 31,17 C37,13 40,20 37,28 C31,36 23,39 26,47 C28,52 37,54 43,47 C49,40 47,28 43,21" stroke="rgba(255,255,255,.62)" stroke-width="2.9" stroke-linecap="round" fill="none"/><path d="M25,48 C25,48 29,29 37,21 C43,16 46,23 43,31 C37,39 29,42 32,49 C34,54 43,56 49,49 C55,42 53,30 49,23" stroke="#00D4AA" stroke-width="2.2" stroke-linecap="round" fill="none" opacity=".95"/></svg>`,
+    };
+
+    function mkPaths(wColor) {
+      return `
+  <path d="M10,50 C10,50 13,25 24,16 C30,11 32,18 28,26 C23,34 15,37 18,45 C20,52 30,56 36,49 C42,42 40,30 36,23" stroke="${wColor}" stroke-width="3.8" stroke-linecap="round" fill="none"/>
+  <path d="M17,52 C17,52 20,28 30,19 C36,14 39,21 35,29 C30,37 22,40 25,47 C27,53 37,57 43,50 C49,43 47,31 43,24" stroke="${wColor}" stroke-width="2.9" stroke-linecap="round" fill="none" opacity=".68"/>
+  <path d="M24,53 C24,53 27,31 36,22 C42,17 45,24 41,32 C36,40 28,43 31,50 C33,56 43,59 49,52 C55,45 53,33 49,26" stroke="#00D4AA" stroke-width="2.2" stroke-linecap="round" fill="none" opacity=".95"/>
+  <path d="M31,54 C31,54 34,34 42,25 C48,20 51,27 47,35 C42,43 34,46 37,52 C39,57 49,60 55,53 C61,46 59,34 55,27" stroke="#00D4AA" stroke-width="1.5" stroke-linecap="round" fill="none" opacity=".5"/>
+  <path d="M38,55 C38,55 41,37 48,28 C54,23 58,30 54,38 C49,46 41,49 44,54 C46,59 56,61 62,54" stroke="#00D4AA" stroke-width="1" stroke-linecap="round" fill="none" opacity=".25"/>`;
+    }
+    function mkPathsTeal() {
+      return `
+  <path d="M10,50 C10,50 13,25 24,16 C30,11 32,18 28,26 C23,34 15,37 18,45 C20,52 30,56 36,49 C42,42 40,30 36,23" stroke="#fff" stroke-width="3.8" stroke-linecap="round" fill="none"/>
+  <path d="M17,52 C17,52 20,28 30,19 C36,14 39,21 35,29 C30,37 22,40 25,47 C27,53 37,57 43,50 C49,43 47,31 43,24" stroke="rgba(255,255,255,.68)" stroke-width="2.9" stroke-linecap="round" fill="none"/>
+  <path d="M24,53 C24,53 27,31 36,22 C42,17 45,24 41,32 C36,40 28,43 31,50 C33,56 43,59 49,52 C55,45 53,33 49,26" stroke="#004D3D" stroke-width="2.2" stroke-linecap="round" fill="none" opacity=".9"/>
+  <path d="M31,54 C31,54 34,34 42,25 C48,20 51,27 47,35 C42,43 34,46 37,52 C39,57 49,60 55,53 C61,46 59,34 55,27" stroke="#004D3D" stroke-width="1.5" stroke-linecap="round" fill="none" opacity=".5"/>
+  <path d="M38,55 C38,55 41,37 48,28 C54,23 58,30 54,38 C49,46 41,49 44,54 C46,59 56,61 62,54" stroke="#004D3D" stroke-width="1" stroke-linecap="round" fill="none" opacity=".25"/>`;
+    }
+
+    function dl(key) {
+      const fn = LOGOS[key];
+      if (!fn) return;
+      const content = typeof fn === 'function' ? fn() : fn;
+      const blob = new Blob([content], { type: 'image/svg+xml' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = `varatraza-tech-${key}.svg`;
+      a.click();
+      URL.revokeObjectURL(a.href);
+    }
+
+    /* ── REPLAY ── */
+    function replay() {
+      const svg = document.getElementById('asvg');
+      const els = svg.querySelectorAll('.aw1,.aw2,.aw3,.aw4,.aw5,.at1,.at2');
+      els.forEach(el => { el.style.animation = 'none'; el.offsetHeight; });
+      requestAnimationFrame(() => {
+        svg.querySelectorAll('.aw1').forEach(e => { e.style.animation = 'drawPath 1.1s cubic-bezier(.4,0,.2,1) .08s forwards, shimmer 3.5s ease 2s infinite'; });
+        svg.querySelectorAll('.aw2').forEach(e => { e.style.animation = 'drawPath 1.1s cubic-bezier(.4,0,.2,1) .26s forwards'; });
+        svg.querySelectorAll('.aw3').forEach(e => { e.style.animation = 'drawPath 1.1s cubic-bezier(.4,0,.2,1) .42s forwards'; });
+        svg.querySelectorAll('.aw4').forEach(e => { e.style.animation = 'drawPath 1.1s cubic-bezier(.4,0,.2,1) .56s forwards'; });
+        svg.querySelectorAll('.aw5').forEach(e => { e.style.animation = 'drawPath 1.1s cubic-bezier(.4,0,.2,1) .68s forwards'; });
+        svg.querySelectorAll('.at1').forEach(e => { e.style.opacity = '0'; e.style.animation = 'fadeUp .45s ease 1.05s forwards'; });
+        svg.querySelectorAll('.at2').forEach(e => { e.style.opacity = '0'; e.style.animation = 'fadeUp .45s ease 1.22s forwards'; });
+      });
+    }
+  </script>
+</body>
+
+</html>

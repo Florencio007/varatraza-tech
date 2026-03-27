@@ -1,19 +1,4 @@
-const FooterLogo = () => (
-  <svg width="160" height="28" viewBox="0 0 400 60" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="footerLogoGrad" x1="0" y1="0" x2="60" y2="60" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#0B5FFF" />
-        <stop offset="100%" stopColor="#00D4AA" />
-      </linearGradient>
-    </defs>
-    <circle cx="24" cy="30" r="22" fill="url(#footerLogoGrad)" />
-    <path d="M14 36 L24 18 L34 36" stroke="white" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-    <text x="58" y="40" fontFamily="DM Sans" fontWeight="800" fontSize="28" letterSpacing="-0.03em" fill="white">
-      <tspan>VARATRAZA</tspan>
-      <tspan fill="#0B5FFF">TECH</tspan>
-    </text>
-  </svg>
-);
+import Logo from "./Logo";
 
 const footerCols = [
   {
@@ -26,38 +11,68 @@ const footerCols = [
   },
   {
     title: "Liens utiles",
-    links: ["Accueil", "Services", "Tarifs", "Contact", "Blog"],
+    links: [
+      { label: "Accueil", href: "#accueil" },
+      { label: "Services", href: "#services" },
+      { label: "Tarifs", href: "#tarifs" },
+      { label: "Contact", href: "#contact" },
+      { label: "Équipe", href: "#equipe" }
+    ],
   },
 ];
 
 const Footer = () => (
-  <footer className="bg-navy section-padding pb-8">
-    <div className="container-max">
-      <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
-        <div className="lg:col-span-2">
-          <FooterLogo />
-          <p className="text-primary-foreground/50 text-sm mt-4 max-w-xs">
-            Le vent digital de Madagascar. Agence spécialisée en sites web, IA et automatisation.
+  <footer className="bg-[#020817] pt-24 pb-12 relative overflow-hidden">
+    {/* Background glow */}
+    <div className="absolute bottom-0 left-0 w-full h-[500px] bg-[radial-gradient(circle_at_50%_100%,_hsl(221_83%_53%_/_0.1),_transparent_70%)] pointer-events-none" />
+
+    <div className="container-max relative z-10">
+      <div className="grid lg:grid-cols-12 gap-16 mb-20">
+        <div className="lg:col-span-5">
+          <Logo width={124} height={28} />
+          <p className="text-slate-400 text-lg mt-8 max-w-sm leading-relaxed">
+            Propulser les entreprises malgaches dans l'ère de l'intelligence artificielle avec des solutions digitales d'exception.
           </p>
-        </div>
-        {footerCols.map((col) => (
-          <div key={col.title}>
-            <h4 className="text-primary-foreground font-bold text-sm mb-4">{col.title}</h4>
-            <ul className="space-y-2">
-              {col.links.map((link) => (
-                <li key={link}>
-                  <a href="#" className="text-primary-foreground/50 text-sm hover:text-teal transition-colors">
-                    {link}
-                  </a>
-                </li>
-              ))}
-            </ul>
+          <div className="mt-10 flex gap-4">
+            {/* Social icons placeholder */}
+            {[1, 2, 3].map((i) => (
+              <div key={i} className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white/40 hover:text-primary hover:border-primary transition-all cursor-pointer">
+                <span className="text-xs font-bold font-mono">X</span>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
+        
+        <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-10">
+          {footerCols.map((col) => (
+            <div key={col.title}>
+              <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-6">{col.title}</h4>
+              <ul className="space-y-4">
+                {col.links.map((link) => (
+                  <li key={typeof link === 'string' ? link : link.label}>
+                    <a 
+                      href={typeof link === 'string' ? "#contact" : link.href} 
+                      className="text-slate-500 text-sm hover:text-primary transition-colors flex items-center gap-2 group"
+                    >
+                      <span className="w-1.5 h-[1px] bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-left" />
+                      {typeof link === 'string' ? link : link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
       </div>
-      <div className="border-t border-primary-foreground/10 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-primary-foreground/40">
-        <span>© 2024 Varatraza Tech. Tous droits réservés.</span>
-        <span>Fait avec ❤️ à Antananarivo</span>
+
+      <div className="border-t border-white/5 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="text-slate-500 text-xs font-medium">
+          © 2024 Varatraza Tech — <span className="text-primary italic">Antananarivo, Madagascar</span>
+        </div>
+        <div className="flex gap-8 text-slate-500 text-xs font-medium">
+          <a href="#" className="hover:text-white transition-colors">Politique de confidentialité</a>
+          <a href="#" className="hover:text-white transition-colors">Mentions légales</a>
+        </div>
       </div>
     </div>
   </footer>

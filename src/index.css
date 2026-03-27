@@ -4,42 +4,43 @@
 
 @layer base {
   :root {
-    --background: 220 27% 98%;
-    --foreground: 224 38% 17%;
-    --card: 0 0% 100%;
-    --card-foreground: 224 38% 17%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 224 38% 17%;
-    --primary: 220 100% 52%;
+    /* Brand Colors: Varatraza Blue (#0B5FFF) & Teal (#00D4AA) */
+    --primary: 219 97% 52%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 220 27% 96%;
-    --secondary-foreground: 224 38% 17%;
-    --muted: 220 27% 96%;
-    --muted-foreground: 215 16% 47%;
-    --accent: 164 100% 42%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 220 20% 91%;
-    --input: 220 20% 91%;
-    --ring: 220 100% 52%;
-    --radius: 1rem;
+    
+    --accent: 168 100% 41%;
+    --accent-foreground: 222 47% 11%;
 
-    --navy: 216 67% 10%;
+    --teal: 168 100% 41%;
+    --navy: 222 47% 11%;
     --navy-foreground: 0 0% 100%;
-    --slate-text: 224 38% 17%;
-    --gray-text: 215 16% 47%;
-    --off-white: 220 27% 97%;
-    --teal: 164 100% 42%;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 220 100% 52%;
+    --background: 220 33% 98%;
+    --foreground: 222 47% 11%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 219 97% 52%;
+    --radius: 1.25rem;
+
+    --slate-text: 215 25% 27%;
+    --gray-text: 215 16% 47%;
+    --off-white: 210 40% 98%;
   }
 }
 
@@ -51,7 +52,11 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .font-mono {
+    font-family: 'Space Mono', monospace;
   }
 }
 
@@ -72,7 +77,16 @@
     @apply hover:-translate-y-1 hover:shadow-xl hover:border-primary;
   }
   .btn-pill {
-    @apply rounded-[50px] px-6 py-3 font-semibold text-sm transition-all duration-300;
+    @apply rounded-[50px] px-8 py-3.5 font-bold text-sm transition-all duration-300 shadow-sm hover:shadow-md active:scale-95;
+  }
+  .glass {
+    @apply bg-white/70 backdrop-blur-xl border border-white/20 shadow-xl;
+  }
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-teal;
+  }
+  .gradient-bg {
+    @apply bg-gradient-to-br from-primary via-primary to-teal;
   }
 }
 
@@ -100,6 +114,48 @@
   0%, 100% { transform: translateY(0); opacity: 0.6; }
   50% { transform: translateY(8px); opacity: 1; }
 }
-.animate-scroll-bounce {
-  animation: scroll-bounce 2s ease-in-out infinite;
+/* Official Varatraza Logo Animations (Looping version) */
+@keyframes drawPathLoop {
+  0%, 10% { stroke-dashoffset: 320; opacity: 0; }
+  15% { opacity: 1; }
+  45%, 85% { stroke-dashoffset: 0; opacity: 1; }
+  95%, 100% { stroke-dashoffset: 0; opacity: 0; }
+}
+@keyframes fadeUp   { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes floatY   { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes pulseDot { 0%,100% { r: 3.5; opacity: 1; } 50% { r: 6; opacity: .5; } }
+@keyframes shimmer  { 0%,100% { stroke-opacity: 1; } 50% { stroke-opacity: .45; } }
+
+.aw1 { stroke-dasharray: 320; stroke-dashoffset: 320; animation: drawPathLoop 6s ease-in-out .08s infinite, shimmer 3.5s ease 2s infinite; }
+.aw2 { stroke-dasharray: 320; stroke-dashoffset: 320; animation: drawPathLoop 6s ease-in-out .26s infinite; }
+.aw3 { stroke-dasharray: 320; stroke-dashoffset: 320; animation: drawPathLoop 6s ease-in-out .42s infinite; }
+.aw4 { stroke-dasharray: 320; stroke-dashoffset: 320; animation: drawPathLoop 6s ease-in-out .56s infinite; }
+.aw5 { stroke-dasharray: 320; stroke-dashoffset: 320; animation: drawPathLoop 6s ease-in-out .68s infinite; }
+.at1 { opacity: 0; animation: fadeUp .45s ease 1.05s forwards; }
+.at2 { opacity: 0; animation: fadeUp .45s ease 1.22s forwards; }
+.adot { animation: pulseDot 2.2s ease-in-out 1.6s infinite; }
+.afloat-logo { animation: floatY 5s ease-in-out infinite; }
+
+/* 3D Tech Sphere Animations */
+@keyframes orbit1 {
+  from { transform: rotateX(70deg) rotateZ(0deg); }
+  to   { transform: rotateX(70deg) rotateZ(360deg); }
+}
+@keyframes orbit2 {
+  from { transform: rotateX(-55deg) rotateZ(0deg); }
+  to   { transform: rotateX(-55deg) rotateZ(-360deg); }
+}
+@keyframes orbit3 {
+  from { transform: rotateX(20deg) rotateY(0deg) rotateZ(0deg); }
+  to   { transform: rotateX(20deg) rotateY(360deg) rotateZ(360deg); }
+}
+@keyframes slowspin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Hero orb float */
+@keyframes orbFloat {
+  from { transform: translate(0,0) scale(1); }
+  to   { transform: translate(30px,-30px) scale(1.08); }
 }

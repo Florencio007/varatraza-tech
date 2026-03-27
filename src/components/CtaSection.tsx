@@ -27,119 +27,127 @@ const CtaSection = () => {
 
   return (
     <section id="contact" className="section-padding bg-navy relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_hsl(220_100%_52%_/_0.25),_transparent_70%)]" />
+      {/* Background decoration */}
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] -mr-64 -mt-64 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-teal/10 rounded-full blur-[100px] -ml-40 -mb-40 pointer-events-none" />
 
       <div className="container-max relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-3xl lg:text-5xl font-extrabold tracking-heading text-primary-foreground mb-4">
-            Prêt à porter votre business plus loin ?
-          </h2>
-          <p className="text-primary-foreground/60 text-lg max-w-xl mx-auto">
-            Contactez-nous pour une consultation gratuite. Réponse garantie en moins de 24h.
-          </p>
-        </motion.div>
-
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Form */}
-          <motion.form
-            onSubmit={handleSubmit}
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="bg-background/5 backdrop-blur-sm border border-primary-foreground/10 rounded-2xl p-8 space-y-5"
-          >
-            <div className="grid sm:grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <label className="text-primary-foreground/80 text-sm font-medium">Nom complet *</label>
-                <Input
-                  placeholder="Votre nom"
-                  value={form.name}
-                  onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
-                  className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40"
-                />
-              </div>
-              <div className="space-y-2">
-                <label className="text-primary-foreground/80 text-sm font-medium">Email *</label>
-                <Input
-                  type="email"
-                  placeholder="votre@email.com"
-                  value={form.email}
-                  onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
-                  className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40"
-                />
-              </div>
-            </div>
-            <div className="space-y-2">
-              <label className="text-primary-foreground/80 text-sm font-medium">Téléphone</label>
-              <Input
-                placeholder="+261 XX XXX XXXX"
-                value={form.phone}
-                onChange={e => setForm(f => ({ ...f, phone: e.target.value }))}
-                className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40"
-              />
-            </div>
-            <div className="space-y-2">
-              <label className="text-primary-foreground/80 text-sm font-medium">Message *</label>
-              <Textarea
-                placeholder="Décrivez votre projet..."
-                rows={4}
-                value={form.message}
-                onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
-                className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/40 resize-none"
-              />
-            </div>
-            <Button
-              type="submit"
-              disabled={loading}
-              className="w-full btn-pill bg-primary text-primary-foreground font-bold text-base py-6 hover:opacity-90"
-            >
-              {loading ? "Envoi en cours..." : (
-                <>
-                  <Send size={18} />
-                  Envoyer le message
-                </>
-              )}
-            </Button>
-          </motion.form>
-
-          {/* Contact info */}
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
+          {/* Left: Content */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="space-y-8 lg:pt-4"
+            transition={{ duration: 0.8 }}
           >
+            <span className="eyebrow mb-4 block text-teal">Contactez-nous</span>
+            <h2 className="text-4xl lg:text-6xl font-black text-white leading-[1.1] mb-8">
+               Prêt à insuffler du <span className="gradient-text">vent nouveau</span> à votre business ?
+            </h2>
+            <p className="text-slate-400 text-lg mb-12 max-w-lg leading-relaxed">
+              Discutez de votre projet avec nos experts. Consultation gratuite, sans engagement, réponse sous 24h.
+            </p>
+
             <div className="space-y-6">
               {[
-                { icon: Phone, label: "Téléphone / WhatsApp", value: "+261 XX XXX XXXX" },
-                { icon: Mail, label: "Email", value: "contact@varatraza.mg" },
-                { icon: Globe, label: "Site web", value: "www.varatraza.mg" },
-              ].map(({ icon: Icon, label, value }) => (
-                <div key={label} className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-teal/15 flex items-center justify-center shrink-0">
-                    <Icon size={20} className="text-teal" />
+                { icon: Phone, label: "WhatsApp / Appel", value: "+261 XX XXX XXXX", color: "text-teal" },
+                { icon: Mail, label: "Email Direct", value: "contact@varatraza.mg", color: "text-primary" },
+              ].map(({ icon: Icon, label, value, color }) => (
+                <div key={label} className="flex items-center gap-5 group">
+                  <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-white/10 transition-colors">
+                    <Icon size={24} className={color} />
                   </div>
                   <div>
-                    <p className="text-primary-foreground/50 text-sm">{label}</p>
-                    <p className="text-primary-foreground font-semibold">{value}</p>
+                    <div className="text-[10px] font-black uppercase tracking-widest text-slate-500 mb-1">{label}</div>
+                    <div className="text-xl font-bold text-white">{value}</div>
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className="bg-primary-foreground/5 border border-primary-foreground/10 rounded-2xl p-6">
-              <p className="text-teal font-mono text-xs uppercase tracking-wider mb-2">Horaires</p>
-              <p className="text-primary-foreground/80 text-sm leading-relaxed">
-                Lundi – Vendredi : 8h00 – 18h00<br />
-                Samedi : 9h00 – 13h00<br />
-                Réponse WhatsApp 7j/7
-              </p>
+            <div className="mt-12 p-6 rounded-2xl bg-white/5 border border-white/5 backdrop-blur-sm">
+               <div className="flex items-center gap-3 mb-4">
+                  <div className="w-2 h-2 rounded-full bg-teal animate-pulse" />
+                  <span className="text-xs font-bold text-white uppercase tracking-widest">Disponibilité immédiate</span>
+               </div>
+               <p className="text-slate-400 text-sm">Nous acceptons actuellement 2 nouveaux projets pour le mois prochain. Réservez votre créneau dès maintenant.</p>
             </div>
+          </motion.div>
+
+          {/* Right: Form */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="relative"
+          >
+            <div className="absolute -inset-1 bg-gradient-to-tr from-primary to-teal rounded-[32px] blur opacity-20" />
+            
+            <form
+              onSubmit={handleSubmit}
+              className="relative bg-[#0A1120] border border-white/10 rounded-[30px] p-8 lg:p-12 space-y-6 shadow-2xl"
+            >
+              <div className="grid sm:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">Nom</label>
+                  <Input
+                    placeholder="Jean Dupont"
+                    value={form.name}
+                    onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
+                    className="bg-white/5 border-white/10 text-white h-14 rounded-xl focus:ring-primary/50"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">Email</label>
+                  <Input
+                    type="email"
+                    placeholder="jean@exemple.com"
+                    value={form.email}
+                    onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
+                    className="bg-white/5 border-white/10 text-white h-14 rounded-xl focus:ring-primary/50"
+                  />
+                </div>
+              </div>
+              
+              <div className="space-y-2">
+                <label className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">Téléphone</label>
+                <Input
+                  placeholder="+261 34 XX XXX XX"
+                  value={form.phone}
+                  onChange={e => setForm(f => ({ ...f, phone: e.target.value }))}
+                  className="bg-white/5 border-white/10 text-white h-14 rounded-xl focus:ring-primary/50"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-xs font-bold text-slate-400 uppercase tracking-widest ml-1">Projet</label>
+                <Textarea
+                  placeholder="Dites-nous en plus sur vos besoins..."
+                  rows={4}
+                  value={form.message}
+                  onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
+                  className="bg-white/5 border-white/10 text-white rounded-xl focus:ring-primary/50 resize-none pt-4"
+                />
+              </div>
+
+              <Button
+                type="submit"
+                disabled={loading}
+                className="w-full btn-pill gradient-bg text-white font-black text-sm uppercase tracking-widest py-8 shadow-xl shadow-primary/20 hover:scale-[1.02] transition-transform"
+              >
+                {loading ? "Transmission..." : (
+                  <>
+                    <Send size={18} />
+                    Envoyer ma demande
+                  </>
+                )}
+              </Button>
+
+              <p className="text-center text-[10px] text-slate-500 uppercase tracking-widest">
+                En envoyant ce formulaire, vous acceptez d'être recontacté sous 24h.
+              </p>
+            </form>
           </motion.div>
         </div>
       </div>
