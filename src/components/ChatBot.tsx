@@ -102,6 +102,42 @@ const ChatBot = () => {
   return (
     <div className="fixed bottom-6 right-6 z-[100] flex flex-col items-end">
       <AnimatePresence>
+        {!isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: 10, scale: 0.8 }}
+            animate={{ 
+              opacity: 1, 
+              y: 0, 
+              scale: 1,
+            }}
+            transition={{ delay: 2, duration: 0.5 }}
+            className="mb-4 mr-2 relative"
+          >
+            <motion.div
+              animate={{ 
+                scale: [1, 1.05, 1],
+                opacity: [0.9, 1, 0.9]
+              }}
+              transition={{ 
+                duration: 2, 
+                repeat: Infinity, 
+                ease: "easeInOut" 
+              }}
+              className="bg-white text-primary text-[11px] font-black uppercase tracking-widest px-4 py-2 rounded-2xl shadow-xl border border-primary/10 whitespace-nowrap flex items-center gap-2"
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-teal"></span>
+              </span>
+              Besoin d'aide ?
+            </motion.div>
+            {/* Triangle indicator */}
+            <div className="absolute -bottom-1 right-6 w-3 h-3 bg-white rotate-45 border-r border-b border-primary/5 shadow-sm" />
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, scale: 0.8, y: 20, transformOrigin: "bottom right" }}
