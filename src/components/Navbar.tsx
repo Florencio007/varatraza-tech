@@ -53,7 +53,7 @@ const Navbar = () => {
     >
       <div className="container-max flex items-center justify-between">
         <a href="#accueil" className="relative z-10 transition-transform hover:scale-105">
-          <Logo width={164} height={36} />
+          <Logo width={196} height={44} />
         </a>
 
         {/* Desktop nav — Pill design */}
